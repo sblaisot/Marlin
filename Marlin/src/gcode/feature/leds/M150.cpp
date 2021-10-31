@@ -83,9 +83,11 @@ void GcodeSuite::M150() {
     }
   #endif
 
-  // If 'S' is not specified use both
+  // If 'S' is not specified and NEOPIXEL2_M150_CONTROL_FIRST is set, use first only. Otherwise, use both.
   leds.set_color(color);
-  TERN_(NEOPIXEL2_SEPARATE, leds2.set_color(color));
+  #if ENABLED(NEOPIXEL2_SEPARATE) && DISABLED(NEOPIXEL2_M150_CONTROL_FIRST)
+    leds2.set_color(color);
+  #endif
 }
 
 #endif // HAS_COLOR_LEDS
