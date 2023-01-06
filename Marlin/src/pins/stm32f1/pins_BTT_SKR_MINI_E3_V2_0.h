@@ -67,8 +67,11 @@
   #define NEOPIXEL_PIN                      PA8   // LED driving pin
 #endif
 
-#ifndef PS_ON_PIN
-  #define PS_ON_PIN                         PC13  // Power Supply Control
+// # ifndef PS_ON_PIN
+//   # define PS_ON_PIN                         PC13  // Power Supply Control
+// # endif
+#ifndef NEOPIXEL2_PIN
+  #define NEOPIXEL2_PIN                        PC13  // Power Supply Control User for second neopixel strip
 #endif
 
 #define FAN1_PIN                            PC7
