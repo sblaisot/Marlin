@@ -1035,7 +1035,7 @@
 // extra connectors. Leave undefined any used for non-endstop and non-probe purposes.
 #define USE_XMIN_PLUG
 #define USE_YMIN_PLUG
-#define USE_ZMIN_PLUG
+//#define USE_ZMIN_PLUG
 //#define USE_IMIN_PLUG
 //#define USE_JMIN_PLUG
 //#define USE_KMIN_PLUG
@@ -1169,7 +1169,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 424.9 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
@@ -1275,7 +1275,7 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+// #define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
 #define USE_PROBE_FOR_Z_HOMING
@@ -1484,7 +1484,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -43, -12, -2.70 }
+#define NOZZLE_TO_PROBE_OFFSET { -31.5, -49.5, -2.70 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1695,7 +1695,7 @@
 // @section geometry
 
 // The size of the printable area
-#define X_BED_SIZE 235
+#define X_BED_SIZE 218
 #define Y_BED_SIZE 235
 
 // Travel limits (linear=mm, rotational=°) after homing, corresponding to endstop positions.
@@ -3297,7 +3297,7 @@
   #define NEOPIXEL_TYPE           NEO_GRB // NEO_GRBW, NEO_RGBW, NEO_GRB, NEO_RBG, etc.
                                           // See https://github.com/adafruit/Adafruit_NeoPixel/blob/master/Adafruit_NeoPixel.h
   //#define NEOPIXEL_PIN                4 // LED driving pin
-  #define NEOPIXEL2_TYPE          NEO_GRB
+  //#define NEOPIXEL2_TYPE        NEO_GRB
   //#define NEOPIXEL2_PIN               5
   #define NEOPIXEL_PIXELS              15 // Number of LEDs in the strip. (Longest strip when NEOPIXEL2_SEPARATE is disabled.)
   //#define NEOPIXEL_IS_SEQUENTIAL        // Sequential display for temperature change - LED by LED. Disable to change all LEDs at once.
@@ -3305,7 +3305,7 @@
   //#define NEOPIXEL_STARTUP_TEST         // Cycle through colors at startup
 
   // Support for second Adafruit NeoPixel LED driver controlled with M150 S1 ...
-  #define NEOPIXEL2_SEPARATE
+  // #define NEOPIXEL2_SEPARATE
   #if ENABLED(NEOPIXEL2_SEPARATE)
     #define NEOPIXEL2_PIXELS            3 // Number of LEDs in the second strip
     #define NEOPIXEL2_BRIGHTNESS      127 // Initial brightness (0-255)
